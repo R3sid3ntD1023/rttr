@@ -70,11 +70,11 @@ RTTR_REGISTRATION
 
 
     registration::class_<std::string>("std::string")
-                .constructor<>()
-                .constructor<const std::string&>()
-                .constructor<const std::string&, unsigned int, unsigned int>()
-                .constructor<const char*>()
-                .constructor<const char*, unsigned int>()
-                .constructor<unsigned int, char>()
+                .constructor<>()(policy::ctor::as_object)
+                .constructor<const std::string&>()(policy::ctor::as_object)
+                .constructor<const std::string&, unsigned int, unsigned int>()(policy::ctor::as_object)
+                .constructor<const char*>()(policy::ctor::as_object)
+                .constructor<const char*, unsigned int>()(policy::ctor::as_object)
+                .constructor<unsigned int, char>()(policy::ctor::as_object)
                 ;
 }
